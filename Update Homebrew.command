@@ -1,5 +1,6 @@
 #!/bin/bash
 echo off
+clear
 echo Checking for updates!
 brew update -v
 

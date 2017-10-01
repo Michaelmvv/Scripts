@@ -5,7 +5,11 @@ emptyMsg="There aren't any DNS Servers set on WI-FI."
 #What DNS servers should be added.
 DNSservers="8.8.8.8 4.4.4.4 2001:4860:4860::8888 2001:4860:4860::8844"
 
-echo Finding current DNS
+clear
+echo Current DNS on WIFI:
+echo $(networksetup -getdnsservers WI-FI)
+read -p "Press any key to switch, or control c to exit"
+
 if [[ "$(networksetup -getdnsservers WI-FI)" == "$emptyMsg" ]]; then
   echo Switching to Google DNS
   $(networksetup -setdnsservers WI-FI $DNSservers)
